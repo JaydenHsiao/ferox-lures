@@ -30,9 +30,8 @@ export default ({ article }) => (
       />
     </a>
     <div>
-      <h5 class="text-gray-900 title-font text-lg font-medium">
-        {article.name}
-      </h5>
+      <h5>{article.name}</h5>
+      <p class="mt-1 caption">{article.description}</p>
       <p class="mt-1 caption">${article.priceCad.toFixed(2)}</p>
     </div>
   </div>
