@@ -1,11 +1,11 @@
 {
-  "name": "Contentful Gatsby Starter",
-  "description": "Gatsby starter for a Contentful project.",
+  "name": "Ferox Lures",
+  "description": "Ferox Lures - Hand Crafted Lures",
   "keywords": [
-    "contentful",
-    "gatsby",
-    "static",
-    "ssg"
+    "fishing",
+    "lures",
+    "outdoors",
+    "gear"
   ],
   "repository": "https://github.com/contentful-userland/gatsby-contentful-starter",
   "success_url": "/",

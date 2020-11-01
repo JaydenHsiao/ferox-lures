@@ -25,7 +25,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Ferox Lures',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
@@ -36,6 +36,16 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
+    },
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: { tailwind: true },
     },
   ],
 }
