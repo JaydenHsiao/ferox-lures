@@ -32,7 +32,7 @@ export default ({ article }) => (
     <div>
       <h5>{article.name}</h5>
       <p class="mt-1 caption">{article.description}</p>
-      <p class="mt-1 caption">${article.priceCad.toFixed(2)}</p>
+      <p class="mt-1 caption">${article.priceCad.toFixed(2)} CAD</p>
     </div>
   </div>
 )
