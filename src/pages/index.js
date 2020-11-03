@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
+import Hero from '../components/hero'
 
 class RootIndex extends React.Component {
   render() {
@@ -11,21 +12,25 @@ class RootIndex extends React.Component {
     const products = get(this, 'props.data.allContentfulProduct.edges')
 
     return (
-      <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
-          <section>
-            <div class="container px-5 py-8 mx-auto">
-              <h1 class="mb-6">Our Products</h1>
-              <div class="flex flex-wrap -m-4">
-                {products.map(({ node }) => {
-                  return <ArticlePreview article={node} />
-                })}
+      <>
+        <Hero />
+        <Layout location={this.props.location}>
+          <div style={{ background: '#fff' }}>
+            <Helmet title={siteTitle} />
+            <section>
+              <div>
+                <h1 class="mb-6">Our Products</h1>
+                <div class="flex flex-wrap -m-4 mb-8">
+                  {products.map(({ node }) => {
+                    return <ArticlePreview article={node} />
+                  })}
+                </div>
+                <h1 class="mb-6">How It's Made</h1>
               </div>
-            </div>
-          </section>
-        </div>
-      </Layout>
+            </section>
+          </div>
+        </Layout>
+      </>
     )
   }
 }

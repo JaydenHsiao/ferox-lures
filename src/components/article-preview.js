@@ -28,6 +28,9 @@ export default ({ article }) => (
         style={{ maxHeight: '100%' }}
         imgStyle={{ objectFit: 'cover' }}
       />
+      <span class="label absolute bottom-0 right-0 bg-white px-2 py-1 m-2 rounded-full">
+        {article.size}
+      </span>
     </a>
     <div>
       <h5>

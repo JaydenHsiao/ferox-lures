@@ -16,7 +16,7 @@ class ProductTemplate extends React.Component {
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
           <Helmet title={`${post.name} | ${siteTitle}`} />
-
+          <h1>{post.name}</h1>
           {/* <div className={heroStyles.hero}>
             <Img
               className={heroStyles.heroImage}

@@ -53,6 +53,24 @@ h5 {
   letter-spacing: -0.08px;
 }
 
+.label {
+  /* font-family: 'Ralewayodified; */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 13px;
+  /* identical to box height, or 130% */
+
+  display: flex;
+  align-items: center;
+  text-align: right;
+  letter-spacing: 0.08px;
+
+  /* Greyscale / L28 */
+
+  color: #6b6c7e;
+}
+
 .centered {
   position: absolute;
   top: 50%;
