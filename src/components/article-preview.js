@@ -30,7 +30,9 @@ export default ({ article }) => (
       />
     </a>
     <div>
-      <h5>{article.name}</h5>
+      <h5>
+        <Link to={`/${article.url}`}>{article.name}</Link>
+      </h5>
       <p class="mt-1 caption">{article.description}</p>
       <p class="mt-1 caption">${article.priceCad.toFixed(2)} CAD</p>
     </div>

@@ -47,6 +47,7 @@ export const pageQuery = graphql`
           size
           updatedAt
           priceCad
+          url
           thumbnail {
             fluid(maxWidth: 420) {
               ...GatsbyContentfulFluid_withWebp

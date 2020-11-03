@@ -29,10 +29,10 @@ exports.createPages = ({ graphql, actions }) => {
         const posts = result.data.allContentfulProduct.edges
         posts.forEach((post, index) => {
           createPage({
-            path: `/blog/${post.node.url}/`,
+            path: `/${post.node.url}/`,
             component: blogPost,
             context: {
-              slug: post.node.url,
+              url: post.node.url,
             },
           })
         })
