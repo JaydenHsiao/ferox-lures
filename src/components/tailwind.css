@@ -67,7 +67,6 @@ h5 {
   letter-spacing: 0.08px;
 
   /* Greyscale / L28 */
-
   color: #6b6c7e;
 }
 
@@ -76,6 +75,12 @@ h5 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+ul {
+  margin-left: 1rem;
+  list-style-type: disc;
+  padding-left: 0;
 }
 
 /* @font-face {
