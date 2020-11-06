@@ -53,6 +53,14 @@ h5 {
   letter-spacing: -0.08px;
 }
 
+.callout {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.23px;
+}
+
 .label {
   /* font-family: 'Ralewayodified; */
   font-style: normal;
