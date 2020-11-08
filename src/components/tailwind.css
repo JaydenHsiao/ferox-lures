@@ -12,6 +12,11 @@
     url('/raleway-modified-bold.ttf') format('truetype') font-weight-bold;
 }
 
+html,
+body {
+  margin: 0;
+}
+
 body {
   font-family: 'Raleway Modified', Tahoma, Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -35,6 +40,15 @@ h1 {
   font-size: 32px;
   line-height: 36px;
   letter-spacing: 0.41px;
+}
+
+h2 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: 0.38px;
 }
 
 h5 {

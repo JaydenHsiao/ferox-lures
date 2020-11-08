@@ -15,7 +15,7 @@ class RootIndex extends React.Component {
       <>
         <Hero />
         <Layout location={this.props.location}>
-          <div style={{ background: '#fff' }}>
+          <div style={{ background: '#fff' }} class="px-5 py-8 mx-auto">
             <Helmet title={siteTitle} />
             <section>
               <div>

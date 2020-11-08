@@ -15,9 +15,9 @@ class Template extends React.Component {
 
     return (
       <>
+        <Navigation />
         <Container>
-          {/* <Navigation /> */}
-          <div class="px-5 py-8 mx-auto">{children}</div>
+          <div>{children}</div>
         </Container>
         <Footer />
       </>
