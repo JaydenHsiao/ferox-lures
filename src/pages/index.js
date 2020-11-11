@@ -5,23 +5,10 @@ import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import Hero from '../components/hero'
+import Contact from '../components/contact'
 
 class RootIndex extends React.Component {
-  // state = {
-  //   atTop: true,
-  // }
-  // componentDidMount() {
-  //   document.addEventListener('scroll', () => {
-  //     //remove bottom of black gradient if at the bottom of the page (document height minus viewport height minus a bit of buffer)
-  //     const atTop = window.scrollY <= 10
-  //     if (atTop !== this.state.atTop) {
-  //       this.setState({ atTop })
-  //     }
-  //   })
-  // }
-
   render() {
-    // console.log(`at top = ${this.state.atTop}`)
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const products = get(this, 'props.data.allContentfulProduct.edges')
 
@@ -39,9 +26,10 @@ class RootIndex extends React.Component {
                     return <ArticlePreview article={node} />
                   })}
                 </div>
-                <h1 class="mb-6">How It's Made</h1>
+                {/* <h1 class="mb-6">How It's Made</h1> */}
               </div>
             </section>
+            <Contact />
           </div>
         </Layout>
       </>

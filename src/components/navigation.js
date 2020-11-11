@@ -4,21 +4,33 @@ import { Link } from 'gatsby'
 import Wordmark from '../../static/wordmark.svg'
 import Menu from '../../static/menu.svg'
 
-const links = ['Shop', 'About', "How It's Made"]
+// const links = ['Shop', 'About', "How It's Made"]
+const links = [
+  { text: 'Shop', url: '' },
+  { text: 'About', url: '' },
+  { text: "How It's Made", url: '' },
+]
+// const links = {}
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   const [atTop, setAtTop] = React.useState(true)
 
+  //parse location
+  var parser = document.createElement('a')
+  parser.href = `${window.location.href}`
+
   document.addEventListener('scroll', () => {
-    //scroll listener to detect when to change background
-    setAtTop(window.scrollY <= 40)
+    //if still in top quarter of viewport AND on the homepage, keep navbar transparent
+    setAtTop(
+      window.scrollY <= window.innerHeight * 0.25 && parser.pathname === '/'
+    )
   })
 
   return (
     <>
       <nav
-        className={`py-3 z-10 fixed w-full top-0 transition-colors duration-200 ease-in-out ${
+        className={`py-3 mb-4 z-10 fixed w-full top-0 transition-colors duration-200 ease-in-out ${
           atTop ? null : 'bg-gray-800'
         }`}
       >
@@ -53,8 +65,8 @@ export default function Navbar() {
                 <div class="space-x-6">
                   {links.map((link, index) => {
                     return (
-                      <Link to={`/${link}`} key={index}>
-                        <span class="callout text-xl">{link}</span>
+                      <Link to={`/${link.url}`} key={index}>
+                        <span class="callout text-xl">{link.text}</span>
                       </Link>
                     )
                   })}
@@ -71,8 +83,8 @@ export default function Navbar() {
             <ul className="flex flex-col py-4 text-white font-semibold space-x-0 space-y-4">
               {links.map((link, index) => {
                 return (
-                  <Link to={`/${link}`} key={index}>
-                    <span class="callout text-xl">{link}</span>
+                  <Link to={`/${link.url}`} key={index}>
+                    <span class="callout text-xl">{link.text}</span>
                   </Link>
                 )
               })}
