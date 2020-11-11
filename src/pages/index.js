@@ -7,7 +7,21 @@ import ArticlePreview from '../components/article-preview'
 import Hero from '../components/hero'
 
 class RootIndex extends React.Component {
+  // state = {
+  //   atTop: true,
+  // }
+  // componentDidMount() {
+  //   document.addEventListener('scroll', () => {
+  //     //remove bottom of black gradient if at the bottom of the page (document height minus viewport height minus a bit of buffer)
+  //     const atTop = window.scrollY <= 10
+  //     if (atTop !== this.state.atTop) {
+  //       this.setState({ atTop })
+  //     }
+  //   })
+  // }
+
   render() {
+    // console.log(`at top = ${this.state.atTop}`)
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const products = get(this, 'props.data.allContentfulProduct.edges')
 

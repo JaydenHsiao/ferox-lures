@@ -8,9 +8,20 @@ const links = ['Shop', 'About', "How It's Made"]
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
+  const [atTop, setAtTop] = React.useState(true)
+
+  document.addEventListener('scroll', () => {
+    //scroll listener to detect when to change background
+    setAtTop(window.scrollY <= 40)
+  })
+
   return (
     <>
-      <nav className="py-3 z-10 fixed w-full top-0">
+      <nav
+        className={`py-3 z-10 fixed w-full top-0 transition-colors duration-200 ease-in-out ${
+          atTop ? null : 'bg-gray-800'
+        }`}
+      >
         <div
           style={{ maxWidth: 1180, margin: '0 auto' }}
           class="relative flex flex-wrap items-center justify-between px-5"
