@@ -1,13 +1,11 @@
 {
-  "name": "gatsby-contentful-starter",
-  "description": "Starter Contentful Gatsby Blog",
+  "name": "ferox-lures",
+  "description": "Ferox Lures",
   "version": "1.0.0",
-  "author": "Stefan Judis <stefanjudis@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
-  },
+  "author": "Jayden Hsiao <j3hsiao@uwaterloo.ca>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
+    "emailjs-com": "^2.6.3",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-postcss": "^3.0.4",
     "gatsby-plugin-purgecss": "^5.0.0",
