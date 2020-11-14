@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import Hero from '../components/hero'
-import Contact from '../components/contact'
 
 class RootIndex extends React.Component {
   render() {

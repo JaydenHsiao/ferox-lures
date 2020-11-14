@@ -1,31 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 
 import Wordmark from '../../static/wordmark.svg'
 import Menu from '../../static/menu.svg'
 
-// const links = ['Shop', 'About', "How It's Made"]
 const links = [
   { text: 'Shop', url: '' },
   { text: 'About', url: '' },
   { text: "How It's Made", url: 'how-its-made' },
 ]
-// const links = {}
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   const [atTop, setAtTop] = React.useState(true)
 
-  //parse location
-  var parser = document.createElement('a')
-  parser.href = `${window.location.href}`
+  useEffect(() => {
+    //parse location
+    var parser = document.createElement('a')
+    parser.href = `${window.location.href}`
 
-  document.addEventListener('scroll', () => {
-    //if still in top quarter of viewport AND on the homepage, keep navbar transparent
-    setAtTop(
-      window.scrollY <= window.innerHeight * 0.25 && parser.pathname === '/'
-    )
-  })
+    document.addEventListener('scroll', () => {
+      //if still in top quarter of viewport AND on the homepage, keep navbar transparent
+      setAtTop(
+        window.scrollY <= window.innerHeight * 0.25 && parser.pathname === '/'
+      )
+    })
+  }, [])
 
   return (
     <>

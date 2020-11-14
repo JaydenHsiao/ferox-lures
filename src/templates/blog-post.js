@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
+import emailjs from 'emailjs-com'
+
 import Layout from '../components/layout'
 import Close from '../../static/close.svg'
 
@@ -77,6 +79,7 @@ class ProductTemplate extends React.Component {
               show={this.state.show}
               handleClose={this.hideModal}
               product={product.name}
+              sendEmail={this.sendEmail}
             />
           </div>
         </Layout>
@@ -85,7 +88,7 @@ class ProductTemplate extends React.Component {
   }
 }
 
-const Modal = ({ handleClose, show, product }) => {
+const Modal = ({ handleClose, show, product, sendEmail }) => {
   return (
     <div
       className={`fixed top-0 left-0 w-full h-full ${
@@ -112,7 +115,7 @@ const Modal = ({ handleClose, show, product }) => {
               </p>
             </div>
             <div class="lg:w-1/2 md:w-2/3 mx-auto">
-              <div class="flex flex-wrap -m-2">
+              <form class="flex flex-wrap -m-2" onSubmit={sendEmail}>
                 <div class="p-2 w-3/4">
                   <div class="relative">
                     <label
@@ -160,7 +163,7 @@ const Modal = ({ handleClose, show, product }) => {
                     <input
                       type="email"
                       id="email"
-                      name="email"
+                      name="senderEmail"
                       class="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
@@ -172,17 +175,20 @@ const Modal = ({ handleClose, show, product }) => {
                     </label>
                     <textarea
                       id="notes"
-                      name="notes"
+                      name="feedback"
                       class="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 h-32 lg:h-20 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                     ></textarea>
                   </div>
                 </div>
                 <div class="p-2 w-full">
-                  <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                  <button
+                    type="submit"
+                    class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                  >
                     Send
                   </button>
                 </div>
-              </div>
+              </form>
               {/* <form className="contact-form" onSubmit={sendEmail}>
                 <label>Name</label>
                 <input type="text" name="senderEmail" />
