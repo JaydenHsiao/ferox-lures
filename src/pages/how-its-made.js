@@ -8,7 +8,15 @@ import ArticlePreview from '../components/article-preview'
 
 class HowItsMade extends React.Component {
   render() {
-        <h1>How It's Made</h1>
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    return (
+      <Layout location={this.props.location}>
+        <div style={{ background: '#fff' }} class="px-5 py-8 mx-auto">
+          <Helmet title={`How It's Made | ${siteTitle}`} />
+          <h1>Hello!</h1>
+        </div>
+      </Layout>
+    )
   }
 }
 

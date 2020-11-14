@@ -29,7 +29,6 @@ class RootIndex extends React.Component {
                 {/* <h1 class="mb-6">How It's Made</h1> */}
               </div>
             </section>
-            <Contact />
           </div>
         </Layout>
       </>
