@@ -22,7 +22,6 @@ class ProductTemplate extends React.Component {
 
   sendEmail(e) {
     e.preventDefault()
-
     emailjs
       .sendForm(
         process.env.REACT_APP_EMAILJS_SERVICEID,
@@ -178,7 +177,7 @@ const Modal = ({ handleClose, show, product, sendEmail }) => {
                     </label>
                     <textarea
                       id="notes"
-                      name="feedback"
+                      name="notes"
                       class="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 h-32 lg:h-20 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                     ></textarea>
                   </div>
