@@ -139,7 +139,10 @@ const Modal = ({ handleClose, show, product, sendEmail }) => {
                     Qty
                   </label>
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-gray-100 border border-gray-300 focus:border-indigo-500 text-gray-700 py-3 px-4 pr-8 rounded leading-tight">
+                    <select
+                      class="block appearance-none w-full bg-gray-100 border border-gray-300 focus:border-indigo-500 text-gray-700 py-3 px-4 pr-8 rounded leading-tight"
+                      name="quantity"
+                    >
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -163,7 +166,7 @@ const Modal = ({ handleClose, show, product, sendEmail }) => {
                     <input
                       type="email"
                       id="email"
-                      name="senderEmail"
+                      name="customerEmail"
                       class="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
