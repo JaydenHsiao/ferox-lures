@@ -11,11 +11,14 @@ const links = [
 ]
 
 export default function Navbar() {
-  var parser = document.createElement('a')
+  console.log(typeof document)
+
   //have to grab window.location.href this way because of SSR
   //originally had this in useEffect() to trigger on component mount
   //moved it first because I needed to set the default state of atTop based on location
   const url = typeof window !== 'undefined' ? window.location.href : ''
+  var parser =
+    typeof document !== 'undefined' ? document.createElement('a') : ''
   parser.href = `${url}`
 
   const [navbarOpen, setNavbarOpen] = React.useState(false)
