@@ -2,24 +2,24 @@ import React from 'react'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
-class HowItsMade extends React.Component {
+class AboutUs extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }} class="px-5 py-8 mx-auto mt-10">
-          <Helmet title={`How It's Made | ${siteTitle}`} />
-          <h1>How It's Made</h1>
+          <Helmet title={`About Us | ${siteTitle}`} />
+          <h1>About Us</h1>
         </div>
       </Layout>
     )
   }
 }
 
-export default HowItsMade
+export default AboutUs
 
 export const pageQuery = graphql`
-  query HowItsMadeQuery {
+  query AboutUsQuery {
     site {
       siteMetadata {
         title

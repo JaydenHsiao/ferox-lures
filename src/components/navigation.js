@@ -7,7 +7,7 @@ import Menu from '../../static/menu.svg'
 const links = [
   { text: 'Home', url: '' },
   { text: 'Shop', url: 'shop' },
-  { text: 'About', url: 'about' },
+  { text: 'About', url: 'about-us' },
   { text: "How It's Made", url: 'how-its-made' },
 ]
 
