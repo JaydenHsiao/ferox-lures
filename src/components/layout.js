@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Container from './container'
 import Navigation from './navigation'
 import Footer from './footer'
+
+import ClientOnly from '../utils/client-only'
 
 class Template extends React.Component {
   render() {
@@ -15,7 +16,9 @@ class Template extends React.Component {
 
     return (
       <>
-        <Navigation />
+        <ClientOnly>
+          <Navigation />
+        </ClientOnly>
         <Container>
           <div>{children}</div>
         </Container>
