@@ -17,7 +17,7 @@ class Template extends React.Component {
       <>
         <Navigation />
         <Container>
-          <div class="mt-10">{children}</div>
+          <div>{children}</div>
         </Container>
         <Footer />
       </>

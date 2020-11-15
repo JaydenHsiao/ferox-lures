@@ -1,6 +1,8 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
+import Arrow from '../../static/arrow.svg'
+
 import styles from './hero.module.css'
 import video from '../../static/hero.mp4'
 
@@ -17,7 +19,7 @@ export default ({ data }) => (
   //     <p>{data.shortBio.shortBio}</p>
   //   </div>
   // </div>
-  <div>
+  <div className="text-white">
     <video
       playsInline
       autoPlay="autoplay"
@@ -26,11 +28,15 @@ export default ({ data }) => (
       // poster
       muted
       class="object-cover w-screen left-0 top-0"
-      style={{ height: '90vh', filter: 'brightness(50%)' }}
+      style={{ height: '87vh', filter: 'brightness(50%)' }}
     >
       <source src={video} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <span className="centered big-title text-white">HAND CRAFTED LURES</span>
+    <h1 className="centered text-6xl leading-none -mt-8">HAND CRAFTED LURES</h1>
+    <span className="centered-x">
+      <span className="text-3xl">shop now</span>{' '}
+      <img src={Arrow} class="mx-auto mt-3 w-6" />
+    </span>
   </div>
 )

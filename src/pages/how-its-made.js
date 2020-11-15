@@ -11,7 +11,7 @@ class HowItsMade extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }} class="px-5 py-8 mx-auto">
+        <div style={{ background: '#fff' }} class="px-5 py-8 mx-auto mt-10">
           <Helmet title={`How It's Made | ${siteTitle}`} />
           <h1>Hello!</h1>
         </div>

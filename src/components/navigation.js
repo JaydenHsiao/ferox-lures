@@ -11,14 +11,17 @@ const links = [
 ]
 
 export default function Navbar() {
+  var parser = document.createElement('a')
+  //have to grab window.location.href this way because of SSR
+  //originally had this in useEffect() to trigger on component mount
+  //moved it first because I needed to set the default state of atTop based on location
+  const url = typeof window !== 'undefined' ? window.location.href : ''
+  parser.href = `${url}`
+
   const [navbarOpen, setNavbarOpen] = React.useState(false)
-  const [atTop, setAtTop] = React.useState(true)
+  const [atTop, setAtTop] = React.useState(parser.pathname === '/')
 
   useEffect(() => {
-    //parse location
-    var parser = document.createElement('a')
-    parser.href = `${window.location.href}`
-
     document.addEventListener('scroll', () => {
       //if still in top quarter of viewport AND on the homepage, keep navbar transparent
       setAtTop(
@@ -36,37 +39,37 @@ export default function Navbar() {
       >
         <div
           style={{ maxWidth: 1180, margin: '0 auto' }}
-          class="relative flex flex-wrap items-center justify-between px-5"
+          className="relative flex flex-wrap items-center justify-between px-5"
         >
-          <div class="flex flex-wrap flex-row items-center text-white w-full">
-            <div class="w-1/3 inline-flex lg:justify-end">
+          <div className="flex flex-wrap flex-row items-center text-white w-full">
+            <div className="w-1/3 inline-flex lg:justify-end">
               {' '}
               <button
                 className="lg:hidden"
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
-                <img src={Menu} alt="Hamburger menu icon" class="h-8" />
+                <img src={Menu} alt="Hamburger menu icon" className="h-8" />
               </button>
             </div>
-            <div class="flex lg:order-none w-1/3 items-center text-gray-900 lg:items-center lg:justify-center">
-              <div class="mx-auto">
+            <div className="flex lg:order-none w-1/3 items-center text-gray-900 lg:items-center lg:justify-center">
+              <div className="mx-auto">
                 <Link to={'/'}>
                   <img
                     src={Wordmark}
                     alt="Ferox Lures logo"
-                    class="h-6 my-auto"
+                    className="h-6 my-auto"
                   />
                 </Link>
               </div>
             </div>
-            <nav class="lg:w-1/3 hidden lg:block">
-              <div class="flex flex-col items-end">
-                <div class="space-x-6">
+            <nav className="lg:w-1/3 hidden lg:block">
+              <div className="flex flex-col items-end">
+                <div className="space-x-6">
                   {links.map((link, index) => {
                     return (
                       <Link to={`/${link.url}`} key={index}>
-                        <span class="callout text-xl">{link.text}</span>
+                        <span className="callout text-xl">{link.text}</span>
                       </Link>
                     )
                   })}
@@ -84,7 +87,7 @@ export default function Navbar() {
               {links.map((link, index) => {
                 return (
                   <Link to={`/${link.url}`} key={index}>
-                    <span class="callout text-xl">{link.text}</span>
+                    <span className="callout text-xl">{link.text}</span>
                   </Link>
                 )
               })}
