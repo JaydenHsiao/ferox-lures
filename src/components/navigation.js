@@ -1,19 +1,20 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 
 import Wordmark from '../../static/wordmark.svg'
 import Menu from '../../static/menu.svg'
 
 const links = [
-  { text: 'Shop', url: '' },
-  { text: 'About', url: '' },
+  { text: 'Home', url: '' },
+  { text: 'Shop', url: 'shop' },
+  { text: 'About', url: 'about' },
   { text: "How It's Made", url: 'how-its-made' },
 ]
 
 export default function Navbar() {
-  //have to grab window.location.href this way because of SSR
-  //originally had this in useEffect() to trigger on component mount
-  //moved it first because I needed to set the default state of atTop based on location
+  //by wrapping Navbar in a util that only renders it's children after component has mounted, we can use window/document :)
+  //(Navbar is just replaced by null elem until mount in lifecycle)
+  //great explanation here: https://joshwcomeau.com/react/the-perils-of-rehydration/#two-pass-rendering :)
   const url = window.location.href
   var parser = document.createElement('a')
   parser.href = `${url}`
@@ -27,10 +28,6 @@ export default function Navbar() {
       window.scrollY <= window.innerHeight * 0.25 && parser.pathname === '/'
     )
   })
-
-  // useEffect(() => {
-
-  // }, [])
 
   return (
     <>

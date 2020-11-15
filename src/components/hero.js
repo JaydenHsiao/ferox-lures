@@ -24,10 +24,10 @@ export default ({ data }) => (
       playsInline
       autoPlay="autoplay"
       loop="loop"
-      preload="auto"
-      // poster
+      // poster attr not included, first frame is okay
       muted
-      class="object-cover w-screen left-0 top-0"
+      //bg-gray-800 to show white text before video load
+      class="object-cover w-screen left-0 top-0 bg-gray-800"
       style={{ height: '87vh', filter: 'brightness(50%)' }}
     >
       <source src={video} type="video/mp4" />
@@ -35,7 +35,7 @@ export default ({ data }) => (
     </video>
     <h1 className="centered text-6xl leading-none -mt-8">HAND CRAFTED LURES</h1>
     <span className="centered-x">
-      <span className="text-3xl">shop now</span>{' '}
+      <span className="text-3xl font-semibold">shop now</span>{' '}
       <img src={Arrow} class="mx-auto mt-3 w-6" />
     </span>
   </div>

@@ -1,10 +1,9 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import Hero from '../components/hero'
 
 class RootIndex extends React.Component {
   render() {
@@ -13,23 +12,20 @@ class RootIndex extends React.Component {
 
     return (
       <>
-        <Hero />
         <Layout location={this.props.location}>
-          <div style={{ background: '#fff' }} className="px-5 py-8 mx-auto">
-            <Helmet title={siteTitle} />
+          <div
+            style={{ background: '#fff' }}
+            className="px-5 py-8 mx-auto mt-10"
+          >
+            <Helmet title={`Shop | ${siteTitle}`} />
             <section>
               <div>
-                <h1 className="mb-6">Our Products</h1>
-                <div className="flex flex-wrap -m-4 mb-4">
+                <h1 className="mb-6">Shop</h1>
+                <div className="flex flex-wrap -m-4 mb-8">
                   {products.map(({ node }) => {
                     return <ArticlePreview article={node} />
                   })}
                 </div>
-                <Link to={'shop'}>
-                  <button class="flex mx-auto text-white bg-primary border-0 py-2 px-6 rounded text-lg">
-                    View All Products
-                  </button>
-                </Link>
                 {/* <h1 className="mb-6">How It's Made</h1> */}
               </div>
             </section>
@@ -43,16 +39,13 @@ class RootIndex extends React.Component {
 export default RootIndex
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query ShopQuery {
     site {
       siteMetadata {
         title
       }
     }
-    allContentfulProduct(
-      sort: { fields: [updatedAt], order: DESC }
-      filter: { onHomepage: { eq: true } }
-    ) {
+    allContentfulProduct(sort: { fields: [updatedAt], order: DESC }) {
       edges {
         node {
           name

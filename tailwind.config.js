@@ -7,11 +7,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        cyan: '#9cdbff',
+        primary: '#667eea',
       },
       margin: {
-        '96': '24rem',
-        '128': '32rem',
+        96: '24rem',
+        128: '32rem',
       },
     },
     container: {
