@@ -1,13 +1,9 @@
 module.exports = {
   important: true,
   theme: {
-    fontFamily: {
-      display: ['Gilroy', 'sans-serif'],
-      body: ['Graphik', 'sans-serif'],
-    },
     extend: {
       colors: {
-        primary: '#667eea',
+        primary: '#4D65D1',
       },
       margin: {
         96: '24rem',

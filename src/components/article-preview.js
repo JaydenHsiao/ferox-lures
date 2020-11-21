@@ -3,22 +3,6 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 export default ({ article }) => (
-  // <div className={styles.preview}>
-
-  //   <h3 className={styles.previewTitle}>
-  //     <Link to={`/blog/${article.slug}`}>{article.title}</Link>
-  //   </h3>
-  //   <small>{article.publishDate}</small>
-  //   <div>{article.description}</div>
-  //   {article.tags &&
-  //     article.tags.map((tag) => (
-  //       <p className={styles.tag} key={tag}>
-  //         {tag}
-  //       </p>
-  //     ))}
-
-  // </div>
-
   <div class="lg:w-1/4 md:w-1/4 w-1/2 p-4">
     <Link to={`/${article.url}`}>
       <a class="block relative rounded overflow-hidden mb-2">

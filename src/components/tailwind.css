@@ -104,6 +104,10 @@ ul {
   padding-left: 0;
 }
 
+.x-line {
+  background: linear-gradient(#bdbdbd, #bdbdbd) no-repeat center/90% 20px;
+}
+
 /* @font-face {
   font-family: 'Raleway Modified';
   font-weight: 400;
