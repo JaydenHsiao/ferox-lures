@@ -7,7 +7,7 @@ export default ({ article }) => (
     <Link to={`/${article.url}`}>
       <a class="block relative rounded overflow-hidden mb-2">
         <Img
-          alt="ecommerce"
+          alt={`Preview picture of ${article.name}`}
           fluid={article.thumbnail.fluid}
           style={{ maxHeight: '100%' }}
           imgStyle={{ objectFit: 'cover' }}
@@ -17,7 +17,7 @@ export default ({ article }) => (
         </span>
       </a>
       <div>
-        <h5>{article.name}</h5>
+        <h3>{article.name}</h3>
         <p class="mt-1 caption">{article.description}</p>
         <p class="mt-1 caption">${article.priceCad.toFixed(2)} CAD</p>
       </div>

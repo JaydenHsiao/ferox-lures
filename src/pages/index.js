@@ -18,10 +18,15 @@ class RootIndex extends React.Component {
         <Hero />
         <Layout location={this.props.location}>
           <div style={{ background: '#fff' }} className="px-5 py-8 mx-auto">
-            <Helmet title={siteTitle} />
+            <Helmet title={siteTitle} htmlAttributes={{ lang: 'en' }}>
+              <meta
+                name="description"
+                content="Online store for Ferox Lures' hand crafted lures"
+              />
+            </Helmet>
             <div className="space-y-8">
               <section>
-                <h1 className="mb-6">Our Products</h1>
+                <h2 className="mb-6">Our Products</h2>
                 <div className="flex flex-wrap -m-4 mb-4">
                   {products.map(({ node }) => {
                     return <ArticlePreview article={node} />
@@ -34,9 +39,9 @@ class RootIndex extends React.Component {
                 </Link>
               </section>
               <section>
-                <h1 className="mb-6">How It's Made</h1>
+                <h2 className="mb-6">How It's Made</h2>
                 <div class="flex flex-wrap z-10 connector-line -mx-2 mb-6">
-                  {images.map(({ fluid, title }, index) => {
+                  {images.map(({ fluid, title, description }, index) => {
                     return (
                       <div
                         class={`md:w-1/4 md:px-2 w-full p-2 ${
@@ -45,7 +50,7 @@ class RootIndex extends React.Component {
                       >
                         <div class="bg-gray-100 p-6 rounded-2xl">
                           <Img
-                            alt="ecommerce"
+                            alt={description}
                             fluid={fluid}
                             style={{ maxHeight: '100%' }}
                             className="object-cover rounded-2xl mb-4"
@@ -97,7 +102,7 @@ export const pageQuery = graphql`
           priceCad
           url
           thumbnail {
-            fluid(maxWidth: 420) {
+            fluid(maxWidth: 160) {
               ...GatsbyContentfulFluid_withWebp
             }
           }
@@ -107,6 +112,7 @@ export const pageQuery = graphql`
     contentfulHowItsMade {
       images {
         title
+        description
         fluid(maxWidth: 420) {
           ...GatsbyContentfulFluid_withWebp
         }

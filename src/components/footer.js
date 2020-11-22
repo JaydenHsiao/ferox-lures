@@ -18,10 +18,15 @@ export default () => (
           href="https://www.facebook.com/FEROX-lures-102729374937442/"
           class="ml-auto"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={Facebook} alt="Facebook logo" class="w-10" />
         </a>
-        <a href="https://www.instagram.com/feroxlures/" target="_blank">
+        <a
+          href="https://www.instagram.com/feroxlures/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={Instagram} alt="Instagram logo" class="w-10" />
         </a>
       </div>

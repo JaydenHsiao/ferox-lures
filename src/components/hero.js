@@ -36,7 +36,7 @@ export default ({ data }) => (
     <h1 className="centered text-6xl leading-none -mt-8">HAND CRAFTED LURES</h1>
     <span className="centered-x">
       <span className="text-3xl font-semibold">shop now</span>{' '}
-      <img src={Arrow} class="mx-auto mt-3 w-6" />
+      <img src={Arrow} alt="Down arrow" class="mx-auto mt-3 w-6" />
     </span>
   </div>
 )
