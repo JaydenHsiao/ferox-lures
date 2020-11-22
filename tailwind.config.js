@@ -15,6 +15,9 @@ module.exports = {
     },
   },
   variants: {
-    opacity: ['responsive', 'hover'],
+    extend: {
+      backgroundColor: ['even'],
+      margin: ['even'],
+    },
   },
 }

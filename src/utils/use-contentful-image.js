@@ -1,7 +1,9 @@
-// useContentfulImage.js
+// lets us use gatsby-image with rich text rendering
 import { graphql, useStaticQuery } from 'gatsby'
 
+//given an assetUrl...
 export default (assetUrl) => {
+  //and after querying all the assets in the Contentful space...
   const { allContentfulAsset } = useStaticQuery(
     graphql`
       query CONTENTFUL_IMAGE_QUERY {
@@ -18,5 +20,6 @@ export default (assetUrl) => {
       }
     `
   )
+  //return the fluid WebP url that matches that assetUrl
   return allContentfulAsset.nodes.find((n) => n.file.url === assetUrl).fluid
 }

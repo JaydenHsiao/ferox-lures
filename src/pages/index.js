@@ -35,11 +35,15 @@ class RootIndex extends React.Component {
               </section>
               <section>
                 <h1 className="mb-6">How It's Made</h1>
-                <div class="flex flex-wrap  z-10 x-line -mx-2 mb-6">
+                <div class="flex flex-wrap z-10 connector-line -mx-2 mb-6">
                   {images.map(({ fluid, title }, index) => {
                     return (
-                      <div class="md:w-1/4 w-1/2 px-2">
-                        <div class="bg-gray-200 p-6 rounded-2xl">
+                      <div
+                        class={`md:w-1/4 md:px-2 w-full p-2 ${
+                          index % 2 === 1 ? 'ml-auto' : ''
+                        }`}
+                      >
+                        <div class="bg-gray-100 p-6 rounded-2xl">
                           <Img
                             alt="ecommerce"
                             fluid={fluid}
@@ -47,7 +51,7 @@ class RootIndex extends React.Component {
                             className="object-cover rounded-2xl mb-4"
                           />
                           <div class="flex">
-                            <h3 class="font-bold mr-4">{(index += 1)}</h3>
+                            <h3 class="font-bold mr-4">{(index += 1)}.</h3>
                             <span class="lg:text-large sm:caption text-gray-900 w-3/4">
                               {title}
                             </span>
