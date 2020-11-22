@@ -108,6 +108,21 @@ ul {
   background: linear-gradient(#bdbdbd, #bdbdbd) no-repeat center/90% 20px;
 }
 
+.wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(65ch, 100%)
+    1fr;
+}
+.wrapper > * {
+  grid-column: 2;
+}
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / 4;
+}
+
 /* @font-face {
   font-family: 'Raleway Modified';
   font-weight: 400;

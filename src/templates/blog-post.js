@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
@@ -170,7 +170,7 @@ export default function ProductTemplate(props) {
         <div class="mt-20" style={{ background: '#fff' }}>
           <Helmet title={`${product.name} | ${siteTitle}`} />
           <div class="lg:w-4/5 mx-auto flex flex-wrap mb-12 px-5">
-            <a class="block relative overflow-hidden rounded-2xl lg:w-1/2 w-full h-full mb-4">
+            <a class="block relative overflow-hidden rounded-2xl md:w-1/2 w-full h-full mb-4">
               <Img
                 alt="ecommerce"
                 fluid={product.thumbnail.fluid}
@@ -178,7 +178,7 @@ export default function ProductTemplate(props) {
                 imgStyle={{ objectFit: 'cover' }}
               />
             </a>
-            <div class="lg:w-1/2 w-full lg:pl-10 lg:my-auto">
+            <div class="md:w-1/2 w-full md:pl-10 md:my-auto">
               <h1 class="mb-2">{product.name}</h1>
               <div className="leading-relaxed mb-4 space-y-4">
                 {/* Hello */}

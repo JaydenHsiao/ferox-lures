@@ -35,10 +35,10 @@ class RootIndex extends React.Component {
               </section>
               <section>
                 <h1 className="mb-6">How It's Made</h1>
-                <div class="flex flex-wrap z-10 x-line -mx-2 mb-6">
+                <div class="flex flex-wrap  z-10 x-line -mx-2 mb-6">
                   {images.map(({ fluid, title }, index) => {
                     return (
-                      <div class="xl:w-1/4 md:w-1/2 px-2">
+                      <div class="md:w-1/4 w-1/2 px-2">
                         <div class="bg-gray-200 p-6 rounded-2xl">
                           <Img
                             alt="ecommerce"

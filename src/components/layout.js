@@ -5,15 +5,9 @@ import Footer from './footer'
 
 import ClientOnly from '../utils/client-only'
 
-class Template extends React.Component {
+class Layout extends React.Component {
   render() {
-    const { location, children } = this.props
-
-    let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
-
+    const { children } = this.props
     return (
       <>
         <ClientOnly>
@@ -28,4 +22,4 @@ class Template extends React.Component {
   }
 }
 
-export default Template
+export default Layout

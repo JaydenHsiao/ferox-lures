@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 export default ({ article }) => (
-  <div class="lg:w-1/4 md:w-1/4 w-1/2 p-4">
+  <div class="md:w-1/4 w-1/2 p-4">
     <Link to={`/${article.url}`}>
       <a class="block relative rounded overflow-hidden mb-2">
         <Img

@@ -41,7 +41,7 @@ export default function Navbar() {
           className="relative flex flex-wrap items-center justify-between px-5"
         >
           <div className="flex flex-wrap flex-row items-center text-white w-full">
-            <div className="w-1/3 inline-flex lg:justify-end">
+            <div className="w-2/5 inline-flex lg:justify-end">
               {' '}
               <button
                 className="lg:hidden"
@@ -51,7 +51,7 @@ export default function Navbar() {
                 <img src={Menu} alt="Hamburger menu icon" className="h-8" />
               </button>
             </div>
-            <div className="flex lg:order-none w-1/3 items-center text-gray-900 lg:items-center lg:justify-center">
+            <div className="flex lg:order-none w-1/5 items-center text-gray-900 lg:items-center lg:justify-center">
               <div className="mx-auto">
                 <Link to={'/'}>
                   <img
@@ -62,7 +62,7 @@ export default function Navbar() {
                 </Link>
               </div>
             </div>
-            <nav className="lg:w-1/3 hidden lg:block">
+            <nav className="lg:w-2/5 hidden lg:block">
               <div className="flex flex-col items-end">
                 <div className="space-x-6">
                   {links.map((link, index) => {
