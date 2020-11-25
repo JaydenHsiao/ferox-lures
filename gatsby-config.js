@@ -47,5 +47,24 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: { tailwind: true },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Lato:400,600'],
+        },
+        custom: {
+          families: ['Raleway-Modified-Regular', 'Raleway-Modified-Bold'],
+          urls: ['/fonts/fonts.css'],
+        },
+      },
+    },
   ],
 }
+
+// @font-face {
+//   font-family: 'Raleway Modified';
+//   src: url('/raleway-modified-regular.ttf') format('truetype')
+//       font-weight-normal,
+//     url('/raleway-modified-bold.ttf') format('truetype') font-weight-bold;
+// }

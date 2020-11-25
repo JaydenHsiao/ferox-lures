@@ -28,7 +28,7 @@ class RootIndex extends React.Component {
               <section>
                 <h2 className="mb-6">Our Products</h2>
                 <div className="flex flex-wrap -m-4 mb-4">
-                  {products.map(({ node }) => {
+                  {products.map(({ node }, index) => {
                     return <ArticlePreview article={node} />
                   })}
                 </div>
@@ -47,6 +47,7 @@ class RootIndex extends React.Component {
                         class={`md:w-1/4 md:px-2 w-full p-2 ${
                           index % 2 === 1 ? 'ml-auto' : ''
                         }`}
+                        key={index}
                       >
                         <div class="bg-gray-100 p-6 rounded-2xl">
                           <Img
