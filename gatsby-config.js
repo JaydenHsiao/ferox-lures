@@ -50,13 +50,24 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        google: {
-          families: ['Lato:400,600', 'Lato'],
-        },
+        // google: {
+        //   families: ['Lato:400,600', 'Lato'],
+        // },
         custom: {
           families: ['Raleway Modified'],
           urls: ['fonts.css'],
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Lato`,
+            variants: [`400`, `600`],
+          },
+        ],
       },
     },
   ],
