@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 /* "As a rule of thumb, you want to avoid @import rules because they defer the loading of the included resource until the file is fetched" */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap'); */
 
 html,
 body {
