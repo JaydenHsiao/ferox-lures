@@ -47,6 +47,7 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: { tailwind: true },
     },
+    //loads the fonts specified in fonts.css (has to be in static folder)
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
@@ -54,13 +55,6 @@ module.exports = {
           families: ['RalewayModified'],
           urls: ['fonts.css'],
         },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: `Lato\:400,600`,
-        display: 'swap',
       },
     },
   ],

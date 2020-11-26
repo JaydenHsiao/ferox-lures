@@ -1,3 +1,5 @@
+/* declare fonts to be loaded by gatsby-plugin-web-font-loader */
+
 @font-face {
   font-family: 'RalewayModified';
   src: url('./raleway-modified-regular.ttf') format('truetype');

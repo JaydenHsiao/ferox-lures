@@ -23,6 +23,11 @@ class RootIndex extends React.Component {
                 name="description"
                 content="Online store for Ferox Lures' hand crafted lures"
               />
+              <link rel="preconnect" href="https://fonts.gstatic.com" />
+              <link
+                href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+                rel="stylesheet"
+              />
             </Helmet>
             <div className="space-y-8">
               <section>
