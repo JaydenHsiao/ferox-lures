@@ -38,9 +38,8 @@ export default function AboutUs(props) {
 
   return (
     <Layout>
-      <div style={{ background: '#fff' }} class="mt-10 py-8">
+      <div style={{ background: '#fff' }} class="mt-10 py-8 px-5">
         <Helmet title={`About Us | ${siteTitle}`} />
-
         <div className="leading-relaxed mb-4 space-y-6 wrapper">
           <h1>About Us</h1>
           {documentToReactComponents(content, options)}

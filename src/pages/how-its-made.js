@@ -38,7 +38,7 @@ export default function HowItsMade(props) {
 
   return (
     <Layout>
-      <div style={{ background: '#fff' }} class="mt-10 py-8">
+      <div style={{ background: '#fff' }} class="mt-10 py-8 px-5">
         <Helmet title={`How It's Made | ${siteTitle}`} />
 
         <div className="leading-relaxed mb-4 space-y-6 wrapper">
