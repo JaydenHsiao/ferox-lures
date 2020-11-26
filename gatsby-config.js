@@ -55,7 +55,7 @@ module.exports = {
         },
         custom: {
           families: ['Raleway-Modified-Regular', 'Raleway-Modified-Bold'],
-          urls: ['/fonts/fonts.css'],
+          urls: ['/components/tailwind.css'],
         },
       },
     },

@@ -3,13 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600&display=swap');
+/* "As a rule of thumb, you want to avoid @import rules because they defer the loading of the included resource until the file is fetched" */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600&display=swap');
 
 @font-face {
   font-family: 'Raleway Modified';
-  src: url('/raleway-modified-regular.ttf') format('truetype')
+  src: url('../../static/raleway-modified-regular.ttf') format('truetype')
       font-weight-normal,
-    url('/raleway-modified-bold.ttf') format('truetype') font-weight-bold;
+    url('../../static/raleway-modified-bold.ttf') format('truetype')
+      font-weight-bold;
 } */
 
 html,
@@ -18,7 +21,7 @@ body {
 }
 
 body {
-  font-family: 'Raleway-Modified-Regular', Tahoma, Arial, Helvetica, sans-serif;
+  font-family: 'Raleway Modified', serif;
   font-size: 1em;
   line-height: 1.3;
   color: black;
