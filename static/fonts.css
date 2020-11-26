@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Raleway Modified';
+  src: url('../../static/raleway-modified-regular.ttf') format('truetype')
+      font-weight-normal,
+    url('../../static/raleway-modified-bold.ttf') format('truetype')
+      font-weight-bold;
+}

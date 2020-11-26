@@ -7,14 +7,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600&display=swap');
 
-@font-face {
-  font-family: 'Raleway Modified';
-  src: url('../../static/raleway-modified-regular.ttf') format('truetype')
-      font-weight-normal,
-    url('../../static/raleway-modified-bold.ttf') format('truetype')
-      font-weight-bold;
-}
-
 html,
 body {
   margin: 0;

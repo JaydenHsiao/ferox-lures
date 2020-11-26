@@ -51,11 +51,11 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Lato:400,600'],
+          families: ['Lato:400,600', 'Lato'],
         },
         custom: {
-          families: ['Raleway-Modified-Regular', 'Raleway-Modified-Bold'],
-          urls: ['/components/tailwind.css'],
+          families: ['Raleway Modified'],
+          urls: ['fonts.css'],
         },
       },
     },
