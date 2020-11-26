@@ -54,7 +54,7 @@ module.exports = {
         //   families: ['Lato:400,600', 'Lato'],
         // },
         custom: {
-          families: ['Raleway Modified'],
+          families: ['RalewayModified'],
           urls: ['fonts.css'],
         },
       },
