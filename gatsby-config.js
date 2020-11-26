@@ -60,14 +60,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `Lato`,
-            variants: [`400`, `600`],
-          },
-        ],
+        fonts: [`Lato\:400,600`],
+        display: 'swap',
       },
     },
   ],
