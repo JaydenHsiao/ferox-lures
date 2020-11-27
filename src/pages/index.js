@@ -23,10 +23,9 @@ class RootIndex extends React.Component {
                 name="description"
                 content="Online store for Ferox Lures' hand crafted lures"
               />
-              <link rel="preconnect" href="https://fonts.gstatic.com" />
-              <link
-                href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-                rel="stylesheet"
+              <meta
+                property="og:image"
+                content="../../static/ferox_lures_og_img.jpg"
               />
             </Helmet>
             <div className="space-y-8">
