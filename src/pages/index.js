@@ -21,6 +21,8 @@ class RootIndex extends React.Component {
       og_url = `${node.node.file.url.substring(2)}`
     })
 
+    console.log(og_url)
+
     return (
       <>
         <Hero />
@@ -34,7 +36,7 @@ class RootIndex extends React.Component {
               {/* for Open Graph crawling! */}
               <meta
                 property="og:image"
-                content={`https://i.picsum.photos/id/1053/200/300.jpg?hmac=g-MecQlcjGrVSsQX4Odc3D1ORJuzKsofZ6BIVb1Y4ok`}
+                content="http://images.ctfassets.net/y1mvnt1pefro/4NwVghN7Fa0z9QoRoRqC7g/543e843fd381d79082ff5a98c53c8f12/ferox_lures_og_img.jpg"
               />
             </Helmet>
             <div className="space-y-8">
