@@ -32,7 +32,10 @@ class RootIndex extends React.Component {
                 content="Online store for Ferox Lures' hand crafted lures"
               />
               {/* for Open Graph crawling! */}
-              <meta property="og:image" content={`${og_url}`} />
+              <meta
+                property="og:image"
+                content="http://images.ctfassets.net/y1mvnt1pefro/4NwVghN7Fa0z9QoRoRqC7g/543e843fd381d79082ff5a98c53c8f12/ferox_lures_og_img.jpg"
+              />
             </Helmet>
             <div className="space-y-8">
               <section>
