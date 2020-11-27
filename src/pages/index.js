@@ -16,7 +16,7 @@ class RootIndex extends React.Component {
 
     let og_url
     og.map((node) => {
-      og_url = `${node.node.file.url}`
+      og_url = `${node.node.file.url.substring(2)}`
     })
 
     return (
