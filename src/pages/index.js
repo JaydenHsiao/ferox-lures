@@ -12,6 +12,12 @@ class RootIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const products = get(this, 'props.data.allContentfulProduct.edges')
     const images = get(this, 'props.data.contentfulHowItsMade.images')
+    const og = get(this, 'props.data.allContentfulAsset.edges')
+
+    let og_url
+    og.map((node) => {
+      og_url = `${node.node.file.url}`
+    })
 
     return (
       <>
@@ -23,17 +29,14 @@ class RootIndex extends React.Component {
                 name="description"
                 content="Online store for Ferox Lures' hand crafted lures"
               />
-              <meta
-                property="og:image"
-                content="../../static/ferox_lures_og_img.jpg"
-              />
+              <meta property="og:image" content={og_url} />
             </Helmet>
             <div className="space-y-8">
               <section>
                 <h2 className="mb-6">Our Products</h2>
                 <div className="flex flex-wrap -m-4 mb-4">
                   {products.map(({ node }, index) => {
-                    return <ArticlePreview article={node} />
+                    return <ArticlePreview article={node} key={index} />
                   })}
                 </div>
                 <Link to={'shop'}>
@@ -42,6 +45,11 @@ class RootIndex extends React.Component {
                   </button>
                 </Link>
               </section>
+              <Img
+                fluid={og}
+                style={{ maxHeight: '100%' }}
+                className="object-cover rounded-2xl mb-4"
+              />
               <section>
                 <h2 className="mb-6">How It's Made</h2>
                 <div class="flex flex-wrap z-10 connector-line -mx-2 mb-6">
@@ -120,6 +128,16 @@ export const pageQuery = graphql`
         description
         fluid(maxWidth: 280) {
           ...GatsbyContentfulFluid_withWebp
+        }
+      }
+    }
+    # Query Open Graph (social media preview) image from Contentful
+    allContentfulAsset(filter: { title: { eq: "og:image" } }) {
+      edges {
+        node {
+          file {
+            url
+          }
         }
       }
     }
