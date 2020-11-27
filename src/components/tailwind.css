@@ -44,6 +44,12 @@ h3 {
   letter-spacing: -0.44px;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .caption {
   font-style: normal;
   font-weight: normal;

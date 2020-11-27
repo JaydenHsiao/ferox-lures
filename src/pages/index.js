@@ -12,10 +12,12 @@ class RootIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const products = get(this, 'props.data.allContentfulProduct.edges')
     const images = get(this, 'props.data.contentfulHowItsMade.images')
-    const og = get(this, 'props.data.allContentfulAsset.edges')
 
+    //find og:image url
+    const og = get(this, 'props.data.allContentfulAsset.edges')
     let og_url
     og.map((node) => {
+      //query for image url, remove the "//" at the beginning to get working url
       og_url = `${node.node.file.url.substring(2)}`
     })
 
@@ -29,7 +31,11 @@ class RootIndex extends React.Component {
                 name="description"
                 content="Online store for Ferox Lures' hand crafted lures"
               />
-              <meta property="og:image" content={og_url} />
+              {/* for Open Graph crawling! */}
+              <meta
+                property="og:image"
+                content={`https://i.picsum.photos/id/1053/200/300.jpg?hmac=g-MecQlcjGrVSsQX4Odc3D1ORJuzKsofZ6BIVb1Y4ok`}
+              />
             </Helmet>
             <div className="space-y-8">
               <section>

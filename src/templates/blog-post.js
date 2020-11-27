@@ -65,8 +65,7 @@ export default function ProductTemplate(props) {
                   Contact Us
                 </h1>
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-                  Whatever cardigan tote bag tumblr hexagon brooklyn
-                  asymmetrical gentrify.
+                  Place your order and we'll follow up with you through email!
                 </p>
               </div>
               <div class="lg:w-1/2 md:w-2/3 mx-auto">
