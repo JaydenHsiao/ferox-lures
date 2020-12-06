@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
-import emailjs from 'emailjs-com'
+import emailjs, { init } from 'emailjs-com'
 
 import Layout from '../components/layout'
 import Close from '../../static/close.svg'
@@ -15,6 +15,10 @@ export default function ProductTemplate(props) {
   const siteTitle = get(props, 'data.site.siteMetadata.title')
   const [modalOpen, setModalOpen] = useState(false)
   const [orderSuccess, setOrderSuccess] = useState(false)
+
+  React.useEffect(() => {
+    init(process.env.REACT_APP_EMAILJS_USERID)
+  }, [])
 
   function sendEmail(e) {
     e.preventDefault()
