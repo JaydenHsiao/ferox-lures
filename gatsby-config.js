@@ -47,16 +47,6 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: { tailwind: true },
     },
-    //loads the fonts specified in fonts.css (has to be in static folder)
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        custom: {
-          families: ['RalewayModified'],
-          urls: ['fonts.css'],
-        },
-      },
-    },
   ],
 }
 
