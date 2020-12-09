@@ -10,6 +10,8 @@ import Close from '../../static/close.svg'
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
+init('user_Knmp4GErznkfZmhJlDMSs')
+
 export default function ProductTemplate(props) {
   const product = get(props, 'data.contentfulProduct')
   const siteTitle = get(props, 'data.site.siteMetadata.title')
@@ -18,8 +20,6 @@ export default function ProductTemplate(props) {
 
   React.useEffect(() => {
     init(process.env.REACT_APP_EMAILJS_USERID)
-    console.log(process.env.REACT_APP_EMAILJS_SERVICEID)
-    console.log(process.env.REACT_APP_EMAILJS_USERID)
   }, [])
 
   function sendEmail(e) {
