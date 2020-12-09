@@ -17,15 +17,16 @@ export default function ProductTemplate(props) {
   const [orderSuccess, setOrderSuccess] = useState(false)
 
   React.useEffect(() => {
-    init(process.env.REACT_APP_EMAILJS_USERID)
+    init(process.env.GATSBY_EMAILJS_USERID)
+    console.log(process.env.GATSBY_EMAILJS_USERID)
   }, [])
 
   function sendEmail(e) {
     e.preventDefault()
     emailjs
       .send(
-        process.env.REACT_APP_EMAILJS_SERVICEID,
-        process.env.REACT_APP_EMAILJS_TEMPLATEID,
+        process.env.GATSBY_EMAILJS_SERVICEID,
+        process.env.GATSBY_EMAILJS_TEMPLATEID,
         //TIL - you can just drill down an event like a JSON object LOL
         {
           productName: `${product.name}`,
@@ -36,7 +37,7 @@ export default function ProductTemplate(props) {
           } = $${(product.priceCad * e.target.quantity.value).toFixed(2)} CAD`,
           notes: e.target.notes.value,
         },
-        process.env.REACT_APP_EMAILJS_USERID
+        process.env.GATSBY_EMAILJS_USERID
       )
       .then(
         (result) => {
@@ -214,7 +215,7 @@ export default function ProductTemplate(props) {
             </a>
             <div class="md:w-1/2 w-full md:pl-10 md:my-auto">
               <h1 class="mb-2">{product.name}</h1>
-              {/* <h1 class="mb-2">{process.env.REACT_APP_EMAILJS_USERID}</h1> */}
+              <h1 class="mb-2">{process.env.GATSBY_EMAILJS_USERID}</h1>
               <div className="leading-relaxed mb-4 space-y-4">
                 {/* Hello */}
                 {documentToReactComponents(product.longerDescription.json)}
