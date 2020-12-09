@@ -13,15 +13,6 @@ class RootIndex extends React.Component {
     const products = get(this, 'props.data.allContentfulProduct.edges')
     const images = get(this, 'props.data.contentfulHowItsMade.images')
 
-    //find og:image url
-    const og = get(this, 'props.data.allContentfulAsset.edges')
-    let og_url
-    og.map((node) => {
-      //query for image url, remove the "//" at the beginning to get working url
-      og_url = `${node.node.file.url.substring(2)}`
-      console.log(`${og_url}`)
-    })
-
     return (
       <>
         <Hero />
@@ -33,7 +24,10 @@ class RootIndex extends React.Component {
                 content="Online store for Ferox Lures' hand crafted lures"
               />
               {/* for Open Graph crawling! */}
-              <meta property="og:image" content={`${og_url}`} />
+              <meta
+                property="og:image"
+                content="images.ctfassets.net/y1mvnt1pefro/4NwVghN7Fa0z9QoRoRqC7g/543e843fd381d79082ff5a98c53c8f12/ferox_lures_og_img.jpg"
+              />
             </Helmet>
             <div className="space-y-8">
               <section>
@@ -127,16 +121,6 @@ export const pageQuery = graphql`
         description
         fluid(maxWidth: 280) {
           ...GatsbyContentfulFluid_withWebp
-        }
-      }
-    }
-    # Query Open Graph (social media preview) image from Contentful
-    allContentfulAsset(filter: { title: { eq: "og:image" } }) {
-      edges {
-        node {
-          file {
-            url
-          }
         }
       }
     }
