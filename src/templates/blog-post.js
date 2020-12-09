@@ -17,8 +17,9 @@ export default function ProductTemplate(props) {
   const [orderSuccess, setOrderSuccess] = useState(false)
 
   React.useEffect(() => {
+    // TIL that to access env variables on the browser side, they have to be prefixed with GATSBY_*
+    // don't have to do it for env like contentful though, because gatsby-config is run server side :)
     init(process.env.GATSBY_EMAILJS_USERID)
-    console.log(process.env.GATSBY_EMAILJS_USERID)
   }, [])
 
   function sendEmail(e) {
@@ -215,7 +216,6 @@ export default function ProductTemplate(props) {
             </a>
             <div class="md:w-1/2 w-full md:pl-10 md:my-auto">
               <h1 class="mb-2">{product.name}</h1>
-              <h1 class="mb-2">{process.env.GATSBY_EMAILJS_USERID}</h1>
               <div className="leading-relaxed mb-4 space-y-4">
                 {/* Hello */}
                 {documentToReactComponents(product.longerDescription.json)}
