@@ -18,6 +18,7 @@ export default function ProductTemplate(props) {
 
   React.useEffect(() => {
     init(process.env.REACT_APP_EMAILJS_USERID)
+    console.log(process.env.REACT_APP_EMAILJS_SERVICEID)
     console.log(process.env.REACT_APP_EMAILJS_USERID)
   }, [])
 
