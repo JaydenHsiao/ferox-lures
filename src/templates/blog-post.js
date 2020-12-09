@@ -214,7 +214,7 @@ export default function ProductTemplate(props) {
             </a>
             <div class="md:w-1/2 w-full md:pl-10 md:my-auto">
               <h1 class="mb-2">{product.name}</h1>
-              <h1 class="mb-2">{process.env.REACT_APP_EMAILJS_USERID}</h1>
+              {/* <h1 class="mb-2">{process.env.REACT_APP_EMAILJS_USERID}</h1> */}
               <div className="leading-relaxed mb-4 space-y-4">
                 {/* Hello */}
                 {documentToReactComponents(product.longerDescription.json)}
