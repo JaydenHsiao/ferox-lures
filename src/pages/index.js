@@ -19,7 +19,7 @@ class RootIndex extends React.Component {
     og.map((node) => {
       //query for image url, remove the "//" at the beginning to get working url
       og_url = `${node.node.file.url.substring(2)}`
-      console.log({ og_url })
+      console.log(`${og_url}`)
     })
 
     return (
@@ -27,7 +27,14 @@ class RootIndex extends React.Component {
         <Hero />
         <Layout location={this.props.location}>
           <div style={{ background: '#fff' }} className="px-5 py-8 mx-auto">
-            <Helmet title={siteTitle} />
+            <Helmet title={siteTitle} htmlAttributes={{ lang: 'en' }}>
+              <meta
+                name="description"
+                content="Online store for Ferox Lures' hand crafted lures"
+              />
+              {/* for Open Graph crawling! */}
+              <meta property="og:image" content={`${og_url}`} />
+            </Helmet>
             <div className="space-y-8">
               <section>
                 <h2 className="mb-6">Our Products</h2>
