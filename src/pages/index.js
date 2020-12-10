@@ -17,7 +17,7 @@ class RootIndex extends React.Component {
     const og = get(this, 'props.data.allContentfulAsset.edges')
     let og_url
     og.map((node) => {
-      //query for image url, add http: so open graph image is accepted
+      //query for image url, TIL you have to add http: so open graph image is accepted
       og_url = `http:${node.node.file.url}`
     })
 
@@ -36,6 +36,11 @@ class RootIndex extends React.Component {
               />
               <meta name="og:url" content={`${this.props.location.href}`} />
               <meta property="og:image" content={`${og_url}`} />
+              <meta property="og:type" content="website" />
+              <meta
+                property="og:image:alt"
+                content="Ferox Lures' logo and a picture of some lures"
+              />
             </Helmet>
             <div className="space-y-8">
               <section>
