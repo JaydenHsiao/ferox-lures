@@ -13,21 +13,29 @@ class RootIndex extends React.Component {
     const products = get(this, 'props.data.allContentfulProduct.edges')
     const images = get(this, 'props.data.contentfulHowItsMade.images')
 
+    //find og:image url
+    const og = get(this, 'props.data.allContentfulAsset.edges')
+    let og_url
+    og.map((node) => {
+      //query for image url, add http: so open graph image is accepted
+      og_url = `http:${node.node.file.url}`
+    })
+
     return (
       <>
         <Hero />
         <Layout location={this.props.location}>
           <div style={{ background: '#fff' }} className="px-5 py-8 mx-auto">
             <Helmet title={siteTitle} htmlAttributes={{ lang: 'en' }}>
+              {/* og:url, og:type, og:title, og:description, fb:app_id */}
+              {/* for Open Graph crawling! */}
+              <meta name="og:title" content={`${siteTitle}`} />
               <meta
-                name="description"
+                name="og:description"
                 content="Online store for Ferox Lures' hand crafted lures"
               />
-              {/* for Open Graph crawling! */}
-              <meta
-                property="og:image"
-                content="images.ctfassets.net/y1mvnt1pefro/4NwVghN7Fa0z9QoRoRqC7g/543e843fd381d79082ff5a98c53c8f12/ferox_lures_og_img.jpg"
-              />
+              <meta name="og:url" content={`${this.props.location.href}`} />
+              <meta property="og:image" content={`${og_url}`} />
             </Helmet>
             <div className="space-y-8">
               <section>
@@ -121,6 +129,16 @@ export const pageQuery = graphql`
         description
         fluid(maxWidth: 280) {
           ...GatsbyContentfulFluid_withWebp
+        }
+      }
+    }
+    # Query Open Graph (social media preview) image from Contentful
+    allContentfulAsset(filter: { title: { eq: "og:image" } }) {
+      edges {
+        node {
+          file {
+            url
+          }
         }
       }
     }
